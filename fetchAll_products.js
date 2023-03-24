@@ -1,9 +1,9 @@
 function fetchAllProducts() {
     console.log("inside function");
     const gridContainer = document.querySelector('.grid-container');
-    const url = 'https://mocki.io/v1/a99e6cf4-1e5a-4b0e-bc57-6c651f0f09cd';
+    const url = 'https://fakestoreapi.com/products/';
 
-    gridContainer.innerHTML = '';
+    //gridContainer.innerHTML = '';
 
     fetch(url)
         .then(res => res.json())
@@ -26,14 +26,24 @@ function fetchAllProducts() {
                 productDiv.appendChild(productPrice);
                 gridContainer.appendChild(productDiv);
 
-
+                const item = {
+                    id: product.id, 
+                    title: product.title, 
+                    price: product.price,
+                    description: product.description, 
+                    category: product.category, 
+                    image: product.image
+                };
+                
                 const productA = document.createElement('a');
                 productA.setAttribute('href', 'order.html');
                 productDiv.appendChild(productA);
 
                 const productButton = document.createElement('button')
                 productButton.textContent = "Köp";
-                productButton.setAttribute('onclick', `order(${product.id})`);   
+                productButton.onclick = function () {
+                    order(item)
+                }  
                 productA.appendChild(productButton)
             });
         })
