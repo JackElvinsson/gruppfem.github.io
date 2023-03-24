@@ -23,6 +23,26 @@ function fetchProducts(category) {
                 productPrice.textContent = `$${product.price}`;
                 productDiv.appendChild(productPrice);
                 gridContainer.appendChild(productDiv);
+
+                const item = {
+                    id: product.id, 
+                    title: product.title, 
+                    price: product.price,
+                    description: product.description, 
+                    category: product.category, 
+                    image: product.image
+                };
+
+                const productA = document.createElement('a');
+                productA.setAttribute('href', 'order.html');
+                productDiv.appendChild(productA);
+
+                const productButton = document.createElement('button')
+                productButton.textContent = "Köp";
+                productButton.onclick = function () {
+                    order(item)
+                }  
+                productA.appendChild(productButton)
             });
         })
         .catch(error => {

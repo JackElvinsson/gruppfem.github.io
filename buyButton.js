@@ -1,35 +1,26 @@
-function order(itemId){
-    console.log(itemId);
-    const orderContainer = document.querySelector('.main-container');
-    const url = 'https://mocki.io/v1/a99e6cf4-1e5a-4b0e-bc57-6c651f0f09cd';
+function order(item){
+    localStorage.removeItem('item');
+    localStorage.setItem('item', JSON.stringify(item));
+}
 
+function getItem(){
+    let item = JSON.parse(localStorage.getItem('item'));
 
-    fetch(url)
-        .then(res => res.json())
-        .then(products => {
-            console.log(products);
-            products.forEach(product => {
-                console.log(product.id + " " + itemId)
-                if(product.id == itemId){
-                    const productDiv = document.createElement('div');
-                    productDiv.classList.add('product');
+    const orderContainer = document.querySelector('.order-container');
     
-                    const productImage = document.createElement('img');
-                    productImage.src = product.image;
-                    productDiv.appendChild(productImage);
-    
-                    const productName = document.createElement('h2');
-                    productName.textContent = product.title;
-                    productDiv.appendChild(productName);
-    
-                    const productDescription = document.createElement('p');
-                    productDescription.textContent = `${product.description}`;
-                    productDiv.appendChild(productDescription);
-                    orderContainer.appendChild(productDiv);
-                }
-            })
-        })
-        .catch(error => {
-            console.error(`Error fetching products: ${error}`);
-        });
+    let itemTitle = document.createElement('h2');
+    itemTitle.textContent = item.title;
+    orderContainer.appendChild(itemTitle);
+
+    let itemImage = document.createElement('img');
+    itemImage.src = item.image;
+    orderContainer.appendChild(itemImage);
+
+    let itemDescription = document.createElement('p');
+    itemDescription.textContent = item.description;
+    orderContainer.appendChild(itemDescription);
+
+    let itemPrice = document.createElement('p');
+    itemPrice.textContent = `$${item.price}`
+    orderContainer.appendChild(itemPrice);
 }

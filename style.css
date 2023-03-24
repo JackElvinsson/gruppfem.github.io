@@ -248,8 +248,37 @@ footer {
 }
 
 .form-container{
-    max-width: 500px;
+    width: 45%;
+    float: right;
+    padding: 5px;
+}
+
+.order-container{
+    width: 45%;
+    float: left;
+    padding: 5px;
+}
+
+.order-container img{
+    width: 150px;
+}
+
+.order-container p{
+    font-size: 18px;
+}
+.main-container-2 {
+    max-width: 1000px;
+    margin: 0 auto;
     position: fixed;
+    top: 100px;
+    height: auto;
+    left: 0;
+    right: 0;
+    background-color: #ececece0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.205);
+    backdrop-filter: blur(10px);
+    align-items: center;
     justify-content: center;
-    
 }
