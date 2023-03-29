@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>[webshopName] - Home</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -25,17 +26,40 @@
                     <!-- Item -->
                 </div>
 
-                <div class="form-container">
-                    <label>Namn:</label>
-                    <input type="text" name="name" id="form-name">
-                    <label>Telefon:</label>
-                    <input type="text" name="phonenumber" id="form-phone">
-                    <label>E-post:</label>
-                    <input type="text" name="email" id="form-email">
-                    <label>Leveransadress:</label>
-                    <input type="text" name="address" id="form-address">
-                    <input type="submit" name="submit" id="form-submitbtn" value="Köp">
-                </div>
+                <form class="form-container">
+                    <div class="input-group">
+                        <label>Namn:</label>
+                        <input type="text" placeholder="Fullständigt namn" id="contact-name" onkeyup="validateName()">
+                        <span id="name-error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label>Telefon:</label>
+                        <input type="text" placeholder="Telefonnummer" id="contact-phone" onkeyup="validatePhone()">
+                        <span id="phone-error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label>E-post:</label>
+                        <input type="text" placeholder="E-postadress" id="contact-email" onkeyup="validateEmail()">
+                        <span id="email-error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label>Gatuadress:</label>
+                        <input type="text" placeholder="Gatuadress ink gatunummer" id="contact-address" onkeyup="validateAddress()">
+                        <span id="address-error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label>Postnummer:</label>
+                        <input type="text" placeholder="Postnummer, format 000 00" id="contact-postal-code" onkeyup="validatePostalCode()">
+                        <span id="postal-code-error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label>Ort:</label>
+                        <input type="text" placeholder="Ort" id="contact-city" onkeyup="validateCity()">
+                        <span id="city-error"></span>
+                    </div>
+                    <span id="submit-error"></span>
+                    <input type="submit" name="submit" id="form-submitbtn" value="Köp" onclick="return valitateForm()">
+                </form>
             </div>
 
         </main>
@@ -46,6 +70,7 @@
     <script src="fetch_products.js"></script>
     <script src="fetchAll_products.js"></script>
     <script src="buyButton.js"></script>
+    <script src="submit.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             getItem();
