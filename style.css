@@ -336,3 +336,13 @@ form button{
 .input-group span i{
     color: seagreen;
 }
+
+.form-container button{
+    width: 100%;
+    height: 40px;
+    margin: 8px 0px;
+    cursor: pointer;
+    color: inherit;
+    background: inherit;
+    border: 1px solid #555;
+}

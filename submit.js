@@ -116,10 +116,20 @@ function validateCity() {
 }
 
 function validateForm() {
-    if(!validateName() || !validatePhone() || !validateEmail() || validateMessage()) {
+    if(!validateName() || !validatePhone() || !validateEmail() || !validateAddress() || !validatePostalCode() || !validateCity()) {
         submitError.style.display = 'block';
-        submitError.innerHTML = 'Please fill out the form to submit';
+        submitError.innerHTML = 'Vänligen fyll i alla fält';
         setTimeout(function(){submitError.style.display = 'none';}, 3000);
         return false;
+    } else {
+        sessionStorage.setItem("name", document.getElementById('contact-name').value); 
+        sessionStorage.setItem("phone", document.getElementById('contact-phone').value);
+        sessionStorage.setItem("email", document.getElementById('contact-email').value);
+        sessionStorage.setItem("address", document.getElementById('contact-address').value);
+        sessionStorage.setItem("postal-code", document.getElementById('contact-postal-code').value);
+        sessionStorage.setItem("city", document.getElementById('contact-city').value);
+        
+
+        return true;
     }
 }
