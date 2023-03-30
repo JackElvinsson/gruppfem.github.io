@@ -128,8 +128,7 @@ function validateForm() {
         sessionStorage.setItem("address", document.getElementById('contact-address').value);
         sessionStorage.setItem("postal-code", document.getElementById('contact-postal-code').value);
         sessionStorage.setItem("city", document.getElementById('contact-city').value);
-        
-
         return true;
     }
+    
 }
