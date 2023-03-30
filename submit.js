@@ -115,13 +115,17 @@ function validateCity() {
     return true;
 }
 
-function validateForm() {
+document.getElementById('order-form').addEventListener('submit', validateForm);
+
+function validateForm(e) {
     if(!validateName() || !validatePhone() || !validateEmail() || !validateAddress() || !validatePostalCode() || !validateCity()) {
+        e.preventDefault();
         submitError.style.display = 'block';
         submitError.innerHTML = 'Vänligen fyll i alla fält';
         setTimeout(function(){submitError.style.display = 'none';}, 3000);
         return false;
     } else {
+        e.preventDefault();
         sessionStorage.setItem("name", document.getElementById('contact-name').value); 
         sessionStorage.setItem("phone", document.getElementById('contact-phone').value);
         sessionStorage.setItem("email", document.getElementById('contact-email').value);

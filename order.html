@@ -26,7 +26,7 @@
                     <!-- Item -->
                 </div>
 
-                <form class="form-container">
+                <form class="form-container" id="order-form">
                     <div class="input-group">
                         <label>Namn:</label>
                         <input type="text" placeholder="Fullständigt namn" id="contact-name" onkeyup="validateName()">
@@ -58,8 +58,7 @@
                         <span id="city-error"></span>
                     </div>
                     <span id="submit-error"></span>
-                    <button onclick="return validateForm()" id="form-submitbtn">Köp</button>
-                    <!-- <input type="submit" name="submit" id="form-submitbtn" value="Köp" onclick="return valitateForm()">--> 
+                    <input type="submit" name="submit" id="form-submitbtn" value="Köp"> 
                 </form>
             </div>
 
