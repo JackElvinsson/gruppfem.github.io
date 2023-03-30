@@ -130,5 +130,4 @@ function validateForm() {
         sessionStorage.setItem("city", document.getElementById('contact-city').value);
         return true;
     }
-    
 }
