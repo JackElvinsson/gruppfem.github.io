@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     console.log(document.getElementById('electronics'));
     window.addEventListener('resize', function () {
-        if (window.innerWidth < 1100) {
+        if (window.innerWidth < 1050) {
             document.getElementById('electronics').textContent = 'Electronics';
             document.getElementById('mens').textContent = 'Men\'s';
             document.getElementById('womens').textContent = 'Women\'s';
