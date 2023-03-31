@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>[webshopName] - Home</title>
     <link rel="stylesheet" href="style.css">
@@ -21,10 +20,10 @@
         <main>
             <nav class="category-nav active" id="category-nav">
                 <ul>
-                    <li><a href="#" onclick="fetchProducts('electronics')">Electronics</a></li>
-                    <li><a href="#" onclick="fetchProducts('men\'s clothing')">Men's Clothing</a></li>
-                    <li><a href="#" onclick="fetchProducts('women\'s clothing')">Women's clothing</a></li>
-                    <li><a href="#" onclick="fetchProducts('jewelery')">Jewelry</a></li>
+                    <li><a href="#" id="electronics" onclick="fetchProducts('electronics')">Electronics</a></li>
+                    <li><a href="#" id="mens" onclick="fetchProducts('men\'s clothing')">Men's Clothing</a></li>
+                    <li><a href="#" id="womens" onclick="fetchProducts('women\'s clothing')">Woman's clothing</a></li>
+                    <li><a href="#" id="jewelry" onclick="fetchProducts('jewelery')">Jewelry</a></li>
                 </ul>
             </nav>
             <div class="grid-container">
@@ -39,11 +38,13 @@
     <script src="fetch_products.js"></script>
     <script src="fetchAll_products.js"></script>
     <script src="buyButton.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             fetchAllProducts();
         });
     </script>
+    <script src="scaling.js"></script>
 
 </body>
 </html>
