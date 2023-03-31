@@ -3,7 +3,7 @@ function fetchAllProducts() {
     const gridContainer = document.querySelector('.grid-container');
     const url = 'https://fakestoreapi.com/products/';
 
-    //gridContainer.innerHTML = '';
+   
 
     fetch(url)
         .then(res => res.json())
