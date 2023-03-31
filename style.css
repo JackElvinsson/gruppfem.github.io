@@ -108,29 +108,7 @@ header {
     height: 100%;
 }
 
-@media (max-width: 1100px) {
 
-    .grid-container {
-
-        grid-template-columns: repeat(2, minmax(250px, 1fr));
-        grid-template-rows: repeat(4, auto);
-        grid-gap: 30px;
-        justify-content: center;
-
-    }
-
-    .product {
-        margin: 0 auto;
-    }
-
-    body {
-        font-size: 18px;
-    }
-
-    h1 {
-        font-size: 40px;
-    }
-}
 
 
 .product {
