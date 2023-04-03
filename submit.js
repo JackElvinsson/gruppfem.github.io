@@ -115,7 +115,7 @@ function validateCity() {
     return true;
 }
 
-//document.getElementById('order-form').addEventListener('submit', validateForm);
+
 document.getElementById('order-form').addEventListener('submit', submitOrder);
 
 
@@ -140,7 +140,7 @@ function submitOrder(event) {
         city: document.getElementById('contact-city').value
     };
 
-    // Clear the existing item information and image
+    // Tömmer orderContainer.
     var orderContainer = document.querySelector('.order-container');
     orderContainer.innerHTML = '';
 
