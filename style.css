@@ -435,6 +435,10 @@ footer {
         padding: 0 1px;
         margin: 0 4px;
     }
+
+    .buy-button{
+        opacity: 1;
+    }
 }
 
 /* Mobile device screen */
@@ -527,5 +531,8 @@ footer {
         max-height: 30%;
     }
 
+    .buy-button{
+        opacity: 1;
+    }
 
 }
