@@ -3,8 +3,10 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin: 0 0 100px;
     background-color: #f3f3f3;
     height: 100%;
 }
@@ -27,6 +29,7 @@ body {
 
 
 main {
+    flex-grow: 1;
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
@@ -57,7 +60,7 @@ header {
 /* Category Navbar */
 
 .category-nav {
-    
+
     background-color: #363636;
     position: fixed;
     max-width: 1500px;
@@ -104,7 +107,7 @@ header {
     display: grid;
     grid-template-columns: repeat(3, calc(33.33% - 13.33px));
     grid-template-rows: repeat(2, 1fr);
-    grid-gap: 50px;
+    grid-gap: 30px;
     height: 100%;
 }
 
@@ -136,6 +139,72 @@ header {
 .product p {
     font-weight: bold;
     font-size: 1rem;
+}
+
+/* smaller device screen */
+
+@media screen and (max-width: 1050px) {
+
+    .grid-container {
+
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 50px 30px;
+        justify-content: center;
+
+    }
+
+    .product {
+        margin: 0 auto;
+
+    }
+
+    body {
+        font-size: 18px;
+    }
+
+    .category-nav {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .category-nav ul li {
+        padding: 0 1px;
+        margin: 0 4px;
+    }
+}
+
+/* Mobile device screen */
+
+@media screen and (max-width: 700px) {
+
+    .grid-container {
+
+        grid-template-columns: repeat(1, minmax(250px, 1fr));
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 30px;
+        justify-content: center;
+
+    }
+
+    .product {
+        margin: 0 auto;
+
+    }
+
+    body {
+        font-size: 18px;
+    }
+
+    .category-nav {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .category-nav ul li {
+        padding: 0 1px;
+        margin: 0 4px;
+    }
 }
 
 
@@ -219,19 +288,17 @@ iframe {
     box-shadow: 0px 2px 6px rgba(73, 73, 73, 0.5);
 }
 
-
-/*footer*/
+/* footer */
 footer {
-    position: fixed;
-    bottom: 0;
     width: 100%;
     background-color: #3333331c;
     color: #6161613a;
     text-align: center;
-
 }
 
-.form-container input[type=text]{
+/* Form page */
+
+.form-container input[type=text] {
     width: 100%;
     padding: 12px 10px;
     margin: 8px 0px;
@@ -239,32 +306,33 @@ footer {
     box-sizing: border-box;
 }
 
-.form-container input[type=submit]{
+.form-container input[type=submit] {
     width: 100%;
     height: 40px;
     margin: 8px 0px;
     cursor: pointer;
 }
 
-.form-container{
+.form-container {
     width: 45%;
     float: right;
     padding: 5px;
 }
 
-.order-container{
+.order-container {
     width: 45%;
     float: left;
     padding: 5px;
 }
 
-.order-container img{
+.order-container img {
     width: 150px;
 }
 
-.order-container p{
+.order-container p {
     font-size: 18px;
 }
+
 .main-container-2 {
     max-width: 1000px;
     margin: 0 auto;
@@ -284,16 +352,18 @@ footer {
 
 /* EMMAS JÄVLA SKIT NEDAN */
 
-.input-group{
+.input-group {
     width: 100%;
     display: flex;
     align-items: center;
     margin: 10px 0;
     position: relative;
 }
-.input-group label{
+
+.input-group label {
     flex-basis: 28%;
 }
+
 .input-group input {
     flex-basis: 68%;
     background: transparent;
@@ -305,11 +375,11 @@ footer {
     font-size: 16px;
 }
 
-::placeholder{
+::placeholder {
     font-size: 14px;
 }
 
-.input-group span{
+.input-group span {
     position: absolute;
     bottom: 17px;
     right: 17px;
@@ -317,17 +387,54 @@ footer {
     color: red;
 }
 
-#submit-error{
+#submit-error {
     color: red;
 }
 
-.input-group span i{
+.input-group span i {
     color: seagreen;
 }
 
+.form-container button {
+    width: 100%;
+    height: 40px;
+    margin: 8px 0px;
+    cursor: pointer;
+    color: inherit;
+    background: inherit;
+    border: 1px solid #555;
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px #ececece0 inset;
 }
+
+
+/*Confirmation css*/
+.order-container2 {
+    display: flex;
+    flex-direction: column;
+  
+ 
+}
+
+.order-container2{
+    width: 45%;
+    float: center;
+    padding: 5px;
+}
+
+.order-container2 img{
+    width: 200px;
+}
+
+
+.confirmation-image {
+    align-items:  left;
+    max-height: 50%;
+    max-width: 100%;
+    padding-top: 10%;
+   
+}
+

@@ -115,23 +115,100 @@ function validateCity() {
     return true;
 }
 
-document.getElementById('order-form').addEventListener('submit', validateForm);
 
-function validateForm(e) {
-    if(!validateName() || !validatePhone() || !validateEmail() || !validateAddress() || !validatePostalCode() || !validateCity()) {
-        e.preventDefault();
+document.getElementById('order-form').addEventListener('submit', submitOrder);
+
+
+function submitOrder(event) {
+    event.preventDefault();
+
+    if (!validateForm()) {
         submitError.style.display = 'block';
         submitError.innerHTML = 'Vänligen fyll i alla fält';
-        setTimeout(function(){submitError.style.display = 'none';}, 3000);
-        return false;
-    } else {
-        e.preventDefault();
-        sessionStorage.setItem("name", document.getElementById('contact-name').value); 
-        sessionStorage.setItem("phone", document.getElementById('contact-phone').value);
-        sessionStorage.setItem("email", document.getElementById('contact-email').value);
-        sessionStorage.setItem("address", document.getElementById('contact-address').value);
-        sessionStorage.setItem("postal-code", document.getElementById('contact-postal-code').value);
-        sessionStorage.setItem("city", document.getElementById('contact-city').value);
-        return true;
+        setTimeout(function () {
+            submitError.style.display = 'none';
+        }, 3000);
+        return;
     }
+
+    var userInfo = {
+        name: document.getElementById('contact-name').value,
+        phone: document.getElementById('contact-phone').value,
+        email: document.getElementById('contact-email').value,
+        address: document.getElementById('contact-address').value,
+        postalCode: document.getElementById('contact-postal-code').value,
+        city: document.getElementById('contact-city').value
+    };
+
+    // Tömmer orderContainer.
+    var orderContainer = document.querySelector('.order-container');
+    orderContainer.innerHTML = '';
+
+    // Simulerat serversvar. Triggar displayConfirmation
+    setTimeout(function() {
+        displayConfirmation(userInfo);
+    }, 1000);
 }
+
+
+function validateForm() {
+    return (
+        validateName() &&
+        validatePhone() &&
+        validateEmail() &&
+        validateAddress() &&
+        validatePostalCode() &&
+        validateCity()
+    );
+}
+
+
+function displayConfirmation(confirmation) {
+    var orderContainer = document.querySelector('.order-container');
+    var orderContainer2 = document.querySelector('.order-container2');
+    var formContainer = document.getElementById('order-form');
+    var submitButton = document.getElementById('form-submitbtn');
+
+    // Hämtar item.
+    const item = JSON.parse(localStorage.getItem('item'));
+
+    // Ta bort gamla formen
+        formContainer.style.display = 'none';
+
+    // Container för bilden.
+    var imageContainer = document.createElement('div');
+    imageContainer.classList.add('product-image');
+
+    let itemImage = document.createElement('img');
+    itemImage.classList.add('confirmation-image');
+    itemImage.src = item.image;
+    imageContainer.appendChild(itemImage);
+
+    // ny Div med orderdetaljer.
+    var orderDetails = document.createElement('div');
+    orderDetails.classList.add('order-info');
+    orderDetails.innerHTML = `
+      <h2>Tack för din beställning!</h2>
+      <p>Orderdetaljer:</p>
+      <ul>
+        <li>Namn: ${confirmation.name}</li>
+        <li>Telefon: ${confirmation.phone}</li>
+        <li>E-post: ${confirmation.email}</li>
+        <li>Adress: ${confirmation.address}</li>
+        <li>Postnummer: ${confirmation.postalCode}</li>
+        <li>Ort: ${confirmation.city}</li>
+        <li>Produkt: ${item.title}</li>
+        <li>Orderkostnad: $${item.price}</li>
+      </ul>
+    `;
+
+    //Lägger till orderDetails och imageConteiner till orderContainer.
+    orderContainer.appendChild(orderDetails);
+    orderContainer2.appendChild(imageContainer);
+
+    
+    submitButton.disabled = true;
+}
+
+
+document.getElementById('order-form').addEventListener('submit', submitOrder);
