@@ -402,7 +402,12 @@ footer {
 
 }
 
-
+.continueButton{
+    width: 80%;
+    height: 40px;
+    margin: 8px 0px;
+    cursor: pointer;
+}
 
 /* smaller device screen */
 
