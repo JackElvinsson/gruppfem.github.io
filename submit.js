@@ -216,7 +216,7 @@ function displayConfirmation(confirmation) {
     const continueButton = document.createElement('button') // Fortsätt handla knapp
     continueButton.setAttribute("class", "continueButton");
     continueButton.textContent = "Fortsätt handla";
-    continueButton.onclick = () => location.href = "products.html";
+    continueButton.onclick = () => location.href = "index.html";
     mainContainer2.appendChild(continueButton); 
 }
 
