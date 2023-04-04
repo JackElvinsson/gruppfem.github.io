@@ -161,7 +161,7 @@ header {
     text-decoration: none;
     font-size: 20px;
     cursor: pointer;
-    }
+}
 
 
 .product:hover .buy-button {
@@ -253,9 +253,12 @@ iframe {
 /* footer */
 footer {
     width: 100%;
-    background-color: #3333331c;
+    
     color: #6161613a;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
 }
 
 
@@ -403,7 +406,7 @@ footer {
 
 }
 
-.continueButton{
+.continueButton {
     width: 80%;
     height: 40px;
     margin: 8px 0px;
@@ -442,7 +445,7 @@ footer {
         margin: 0 4px;
     }
 
-    .buy-button{
+    .buy-button {
         opacity: 1;
     }
 }
@@ -537,7 +540,7 @@ footer {
         max-height: 30%;
     }
 
-    .buy-button{
+    .buy-button {
         opacity: 1;
     }
 
