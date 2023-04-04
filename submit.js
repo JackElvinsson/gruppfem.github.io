@@ -208,6 +208,14 @@ function displayConfirmation(confirmation) {
 
     
     submitButton.disabled = true;
+
+    localStorage.removeItem("item"); // Rensar localstorage efter köp
+
+    const continueButton = document.createElement('button') // Fortsätt handla knapp
+    continueButton.setAttribute("class", "continueButton");
+    continueButton.textContent = "Fortsätt handla";
+    continueButton.onclick = () => location.href = "products.html";
+    orderContainer.appendChild(continueButton); 
 }
 
 
