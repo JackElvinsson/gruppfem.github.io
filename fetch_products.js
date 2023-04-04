@@ -39,6 +39,7 @@ function fetchProducts(category) {
 
                 const productButton = document.createElement('button')
                 productButton.textContent = "Köp";
+                productButton.classList.add('buy-button');
                 productButton.onclick = function () {
                     order(item)
                 }  
