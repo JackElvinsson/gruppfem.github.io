@@ -211,11 +211,13 @@ function displayConfirmation(confirmation) {
 
     localStorage.removeItem("item"); // Rensar localstorage efter köp
 
+    var mainContainer2 = document.querySelector('.main-container-2');
+
     const continueButton = document.createElement('button') // Fortsätt handla knapp
     continueButton.setAttribute("class", "continueButton");
     continueButton.textContent = "Fortsätt handla";
     continueButton.onclick = () => location.href = "products.html";
-    orderContainer.appendChild(continueButton); 
+    mainContainer2.appendChild(continueButton); 
 }
 
 
