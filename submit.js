@@ -20,7 +20,7 @@ function validateName() {
         nameError.innerHTML = 'Max 50 tecken';
         return false;
     }
-    nameError.innerHTML = '<i class="fa-sharp fa-solid fa-check"></i>';
+    nameError.innerHTML = '<em class="fa-sharp fa-solid fa-check"></em>';
     return true;
 }
 
@@ -39,7 +39,7 @@ function validatePhone() {
         phoneError.innerHTML = 'Tillåtna tecken: 0-9, (), -';
         return false;
     }
-    phoneError.innerHTML = '<i class="fa-sharp fa-solid fa-check"></i>';
+    phoneError.innerHTML = '<em class="fa-sharp fa-solid fa-check"></em>';
     return true;
 }
 
@@ -58,7 +58,7 @@ function validateEmail() {
         emailError.innerHTML = 'Ogiltig e-postadress';
         return false;
     }
-    emailError.innerHTML = '<i class="fa-sharp fa-solid fa-check"></i>';
+    emailError.innerHTML = '<em class="fa-sharp fa-solid fa-check"></em>';
     return true;
 }
 
@@ -77,7 +77,7 @@ function validateAddress() {
         addressError.innerHTML = 'Ogiltig e-postadress';
         return false;
     }
-    addressError.innerHTML = '<i class="fa-sharp fa-solid fa-check"></i>';
+    addressError.innerHTML = '<em class="fa-sharp fa-solid fa-check"></em>';
     return true;
 }
 
@@ -92,7 +92,7 @@ function validatePostalCode() {
         postalCodeError.innerHTML = 'Ogiltigt postnummer';
         return false;
     }
-    postalCodeError.innerHTML = '<i class="fa-sharp fa-solid fa-check"></i>';
+    postalCodeError.innerHTML = '<em class="fa-sharp fa-solid fa-check"></em>';
     return true;
 }
 
@@ -111,7 +111,7 @@ function validateCity() {
         cityError.innerHTML = 'Ogiltigt ort';
         return false;
     }
-    cityError.innerHTML = '<i class="fa-sharp fa-solid fa-check"></i>';
+    cityError.innerHTML = '<em class="fa-sharp fa-solid fa-check"></em>';
     return true;
 }
 

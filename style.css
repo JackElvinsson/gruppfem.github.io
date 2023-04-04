@@ -356,8 +356,9 @@ footer {
     color: red;
 }
 
-.input-group span i {
+.input-group span em {
     color: seagreen;
+    font-size: 14px;
 }
 
 .form-container button {
